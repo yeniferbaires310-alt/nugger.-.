@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Juego de la Serpiente</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Juego de la Serpiente</h1>
+
+  <!-- Menú inicial -->
+  <div id="menu">
+    <p>Selecciona dificultad:</p>
+    <button onclick="startGame(200)">Fácil</button>
+    <button onclick="startGame(120)">Normal</button>
+    <button onclick="startGame(80)">Difícil</button>
+
+    <!-- Controles de audio -->
+    <div class="audio-panel">
+      <button id="musicToggle">🔊 Música: ON</button>
+      <label for="musicVolume">Volumen</label>
+      <input id="musicVolume" type="range" min="0" max="1" step="0.01" value="0.35" />
+    </div>
+    <small class="tip">
+      Nota: por políticas del navegador, la música empieza al pulsar un botón del menú.
+    </small>
+  </div>
+
+  <!-- Juego -->
+  <canvas id="gameCanvas" width="400" height="400" style="display:none;"></canvas>
+
+  <!-- HUD -->
+  <p class="hud" style="display:none;">
+    <span id="scoreText">Puntuación: 0</span>
+    <button id="restartBtn">Reiniciar</button>
+    <span class="hud-right">[W] Borde: <b id="wrapState">ON</b></span>
+  </p>
+
+  <script src="script.js"></script>
+</body>
+</html>
